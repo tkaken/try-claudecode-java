@@ -7,12 +7,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class CalculatorControllerTest {
-    private Calculator calculator;
+    private Calculator_I calculator;
     private CalculatorController calculatorController;
     
     @Before
     public void setUp() {
-        calculator = mock(Calculator.class);
+        calculator = mock(Calculator_I.class);
         calculatorController = new CalculatorController(calculator);
     }
     

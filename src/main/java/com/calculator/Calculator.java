@@ -1,6 +1,6 @@
 package com.calculator;
 
-public class Calculator {
+public class Calculator implements Calculator_I {
     
     public int add(int addend, int augend) {
         if (addend > 0 && augend > 0 && addend > Integer.MAX_VALUE - augend) {

@@ -1,9 +1,9 @@
 package com.calculator;
 
 public class CalculatorController {
-    private Calculator calculator;
+    private Calculator_I calculator;
     
-    public CalculatorController(Calculator calculator) {
+    public CalculatorController(Calculator_I calculator) {
         this.calculator = calculator;
     }
     
