@@ -17,34 +17,34 @@ public class CalculatorControllerTest {
     public MockitoRule mockitoRule = MockitoJUnit.rule().strictness(Strictness.STRICT_STUBS);
     
     @Mock
-    private Calculator_I calculator;
+    private Calculator_I mockCalculator;
     
     @Mock
-    private Display_I display;
+    private Display_I mockDisplay;
     
     private CalculatorController calculatorController;
     
     @Before
     public void setUp() {
-        calculatorController = new CalculatorController(calculator, display);
+        calculatorController = new CalculatorController(mockCalculator, mockDisplay);
     }
     
     @Test
     public void GivenTwoInts_WhenAdd_ThenCallCalculatorAddAndDisplay() {
-        given(calculator.add(2, 3)).willReturn(5);
+        given(mockCalculator.add(2, 3)).willReturn(5);
         
         calculatorController.add(2, 3);
         
-        then(display).should(times(1)).display(5);
+        then(mockDisplay).should(times(1)).display(5);
     }
     
     @Test (expected = IllegalArgumentException.class)
     public void GivenNullCalculator_WhenConstruct_ThenThrowException() {
-        new CalculatorController(null, display);
+        new CalculatorController(null, mockDisplay);
     }
     
     @Test (expected = IllegalArgumentException.class)
     public void GivenNullDisplay_WhenConstruct_ThenThrowException() {
-        new CalculatorController(calculator, null);
+        new CalculatorController(mockCalculator, null);
     }
 }
