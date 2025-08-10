@@ -2,6 +2,7 @@ package com.calculator;
 
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
+import static org.mockito.Mockito.times;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -34,6 +35,16 @@ public class CalculatorControllerTest {
         
         calculatorController.add(2, 3);
         
-        then(display).should().display(5);
+        then(display).should(times(1)).display(5);
+    }
+    
+    @Test (expected = IllegalArgumentException.class)
+    public void GivenNullCalculator_WhenConstruct_ThenThrowException() {
+        new CalculatorController(null, display);
+    }
+    
+    @Test (expected = IllegalArgumentException.class)
+    public void GivenNullDisplay_WhenConstruct_ThenThrowException() {
+        new CalculatorController(calculator, null);
     }
 }

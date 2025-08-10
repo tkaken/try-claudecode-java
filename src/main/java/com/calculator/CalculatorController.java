@@ -5,6 +5,12 @@ public class CalculatorController {
     private Display_I display;
     
     public CalculatorController(Calculator_I calculator, Display_I display) {
+        if (null == calculator) {
+            throw new IllegalArgumentException("Calculator cannot be null");
+        }
+        if (null == display) {
+            throw new IllegalArgumentException("Display cannot be null");
+        }
         this.calculator = calculator;
         this.display = display;
     }
