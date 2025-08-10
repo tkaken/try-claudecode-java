@@ -11,4 +11,11 @@ public class Calculator {
         }
         return addend + augend;
     }
+    
+    public int divide(int dividend, int divisor) {
+        if (0 == divisor) {
+            throw new ArithmeticException("Cannot divide by zero");
+        }
+        return dividend / divisor;
+    }
 }

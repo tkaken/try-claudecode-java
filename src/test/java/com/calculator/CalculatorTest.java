@@ -63,5 +63,21 @@ public class CalculatorTest
         this.calculator.add(Integer.MIN_VALUE, -1);
     }
 
+    @Test
+    public void GivenTwoPosInts_WhenDivide_ThenProvideQuotient() 
+    {
+        assertThat(this.calculator.divide(6, 2), is(3));
+    }
+    
+    @Test
+    public void GivenDividendAndZero_WhenDivide_ThenThrowException() 
+    {
+        try {
+            this.calculator.divide(5, 0);
+            org.junit.Assert.fail("Expected ArithmeticException");
+        } catch (ArithmeticException e) {
+            assertThat(e.getMessage(), is("Cannot divide by zero"));
+        }
+    }
     
 }
