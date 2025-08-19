@@ -7,10 +7,11 @@ import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 import com.calculator.Calculator;
+import com.calculator.Calculator_I;
 
 public class CalculatorTest 
 {
-    private Calculator calculator;
+    private Calculator_I calculator;
     
     @Before
     public void setUp() 
